@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Family Members</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="lib/node_modules/materialize-css/dist/css/materialize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <main>
+        	<div>
+        		<nav class="row box">
+      		<div class="nav-wrapper">
+        		<ul id="nav-mobile" class="left nav__links">
+        			<li>My Family Members</li>
+          			<li><a href="#" title="">View Family Members</a></li>
+          			<li id="add-song"><a href="#" title="">Add Family</a></li>
+       			</ul>
+      		</div>
+    			</nav>
+    <div class="uiContainer row container">
+      <section class="uiContainer--wrapper col s4" id="list-family">
+      </section>
+      <section class="col s6" id="add-family">
+      <div class="row">
+    	<form class="col s6">
+     	 <div class="row">
+          	<input placeholder="Enter Name" id="name" type="text" class="validate">
+          	<label for="name">Name</label>
+          	<input placeholder="Enter Age" id="age" type="text" class="validate">
+          	<label for="age">Age</label>
+          	<input placeholder="Enter Gender" id="gender" type="text" class="validate">
+          	<label for="gender">Gender</label>
+          	<textarea placeholder="Enter Skill" id="skills1" class="materialize-textarea"></textarea>
+          	<label for="skills1">Skills</label>
+          	<textarea placeholder="Enter Skill" id="skills2" class="materialize-textarea"></textarea>
+          	<label for="skills2">Skills</label>
+          	<textarea placeholder="Enter Skill" id="skills3" class="materialize-textarea"></textarea>
+          	<label for="skills3">Skills</label>
+          	<textarea placeholder="Enter Skill" id="skills4" class="materialize-textarea"></textarea>
+          	<label for="skills4">Skills</label>
+          	<br>
+          	<a class="waves-effect waves-light btn" id="submit">Submit</a>
+        </div>
+      </div>
+      </section>
+    </div>
+        </main>
+		<script type="text/javascript" src="dist/app.js"></script>
+<footer class="kfooter"><p>&copy; 2017 Kathleen Weisensel</p></footer>
+
+</body>
+</html>
