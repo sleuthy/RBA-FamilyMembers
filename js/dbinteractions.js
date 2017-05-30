@@ -21,13 +21,13 @@ function getFamily(data) {
 	});
 }
 
-function addFamilyMember(famMemObj) {
-	console.log("add family member", famMemObj);
+function addFamilyMember(personObj) {
+	console.log("add family member", personObj);
 	return new Promise(function(resolve, reject){
 		$.ajax({
 			url: `${firebase.getFBsettings().databaseURL}/family/.json`,
 			type: 'POST',
-			data: JSON.stringify(famMemObj),
+			data: JSON.stringify(personObj),
 			dataType: 'json'
 		}).done(function(famID){
 			resolve(famID);
@@ -36,16 +36,30 @@ function addFamilyMember(famMemObj) {
 }
 // // POST - Submits data to be processed to a specified resource. Takes one parameter.
 
-// function deleteFamilyMember(famID) {
-// 	return new Promise(function(resolve, reject){
-// 		$.ajax({
-// 			url: `${firebase.getFBsettings().databaseURL}/family/${famId}.json`,
-// 			method: 'DELETE'
-// 		}).done(function(){
-// 			resolve();
-// 		});
-// 	});
-// }
+function postFamToFB(personObj) {
+	console.log("add person object", personObj);
+	return new Promise(function(resolve, reject){
+		$.ajax({
+			url: `${firebase.getFBsettings().databaseURL}/family.json`,
+			type: 'POST',
+			data: JSON.stringify(personObj),
+			dataType: 'json'
+		}).done(function(famID){
+			resolve(famID);
+		});
+	});
+}
+
+function deleteFamilyMember(famID) {
+	return new Promise(function(resolve, reject){
+		$.ajax({
+			url: `${firebase.getFBsettings().databaseURL}/family/${famID}.json`,
+			method: 'DELETE'
+		}).done(function(){
+			resolve();
+		});
+	});
+}
 
 
 // // GET - Requests/read data from a specified resource
@@ -55,4 +69,6 @@ function addFamilyMember(famMemObj) {
 module.exports = {
   getFamily,
   addFamilyMember,
+  postFamToFB,
+  deleteFamilyMember
 };
